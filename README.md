@@ -3,7 +3,7 @@
 
 ## 초기 환경설정
 ```
-cd ~/ros2_simulation_vehicle_simulation
+cd ~/ros2_autonomous_vehicle_simulation
 sh install.sh
 source ~/.bashrc
 ```
@@ -11,7 +11,7 @@ source ~/.bashrc
 
 ## 초기 환경설정
 ```
-cd ~/ros2_simulation_vehicle_simulation
+cd ~/ros2_autonomous_vehicle_simulation
 export AMENT_PREFIX_PATH=''
 export CMAKE_PREFIX_PATH=''
 source /opt/ros/humble/setup.bash
@@ -21,7 +21,7 @@ rosdep install -i --from-path src --rosdistro humble -y
 
 ## 패키지 빌드
 ```
-cd ~/ros2_simulation_vehicle_simulation
+cd ~/ros2_autonomous_vehicle_simulation
 source /opt/ros/humble/setup.bash
 colcon build --packages-select interfaces_pkg --allow-overriding interfaces_pkg 
 source install/local_setup.bash
@@ -42,6 +42,6 @@ source install/local_setup.bash
 
 ## 시뮬레이터 실행
 ```
-cd ~/ros2_simulation_vehicle_simulation
+cd ~/ros2_autonomous_vehicle_simulation
 sudo killall -9 gazebo gzserver gzclient; ros2 launch simulation_pkg driving_sim.launch.py
 ```
