@@ -42,7 +42,15 @@ source install/local_setup.bash
 
 
 ## 시뮬레이터 실행
+
+### 장애물 없는 환경
 ```
 cd ~/ros2_autonomous_vehicle_simulation
 sudo killall -9 gazebo gzserver gzclient; ros2 launch simulation_pkg driving_sim.launch.py
+```
+
+### 장애물 및 신호등 있는 환경
+```
+cd ~/ros2_autonomous_vehicle_simulation
+sudo killall -9 gazebo gzserver gzclient; ros2 launch simulation_pkg mission_sim.launch.py
 ```
