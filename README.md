@@ -3,6 +3,7 @@
 
 ## 초기 환경설정
 ```
+git clone https://github.com/SKKUAutoLab/ros2_autonomous_vehicle_simulation
 cd ~/ros2_autonomous_vehicle_simulation
 sh install.sh
 source ~/.bashrc
