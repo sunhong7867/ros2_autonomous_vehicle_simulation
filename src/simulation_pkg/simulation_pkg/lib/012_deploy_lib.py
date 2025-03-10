@@ -9,7 +9,6 @@ import time
 
 # from simulation_pkg import get_pyc
 
-
 random.seed(time.time())
 """
 파일 수정 후 그냥 실행하면 pyc 파일 옮겨짐
@@ -89,11 +88,11 @@ def load_model(entity_name, model_name, random_coordinates):
     os.system(f"ros2 run gazebo_ros spawn_entity.py -file {model_file} -entity {entity_name} -x {x} -y {y} -z {z} -R {roll} -P {pitch} -Y {yaw}")
 
 def driving_ego():  
-    x_min = -2.894453
-    x_max = -2.607090
+    x_min = -2.568994
+    x_max = -2.526850
     
-    y_min = -22.025925
-    y_max = -21.583269
+    y_min = -22.750868 
+    y_max = -22.666580
     
     random_x = random.uniform(x_min, x_max)
     random_y = random.uniform(y_min, y_max)
@@ -123,12 +122,12 @@ def old_obstacle_stand(): # 신호등
     return x, y, z, r, p, y
 
 def traffic_light_stand(): # 신호등   
-    x_min = -3.533547 
-    x_max = -0.346899
+    x_min = -5.913965
+    x_max = -5.337101
     
-    y_min = 16.829597
-    y_max = 16.836048 
-    
+    y_min = 17.857704
+    y_max = 17.949493 
+
     random_x = random.uniform(x_min, x_max)
     random_y = random.uniform(y_min, y_max)
     
@@ -142,9 +141,13 @@ def traffic_light_stand(): # 신호등
 
 # 장애물 회피 차량 + 범위 지정 + 랜덤
 model_types = ["hatchback_blue", "hatchback", "hatchback_red", "hatchback_green", "hatchback_yellow"] 
-obstacle_coordinates1 = (10.166589, -15.518788, 0.00, 0.00, 0.00, 1.034517)
-obstacle_coordinates2 = [(13.624354, -3.377483), (13.486823, -2.015359), (13.302920, -0.193972)]
-obstacle_coordinates3 = [(10.104571, 7.830590), (9.976805, 9.211600), (9.811776, 10.846054)]
+
+obstacle_coordinates1 = (12.251981, -15.909271, 0.00, 0.00, 0.00, 0.914252)
+obstacle_coordinates_1= (-3.659642, 8.710748, 0.00, 0.00, 0.00, -0.013934)
+obstacle_coordinates_2= (-3.659642, 2.037476, 0.00, 0.00, 0.00, -0.013934)
+
+obstacle_coordinates2 = [(11.884767, 11.605120), (12.040719, 10.060495), (12.230394, 8.181866)]
+obstacle_coordinates3 = [(16.106836, -0.111269), (16.281788, -1.844067), (16.366463, -3.446680)]
 
 def obstacle_coord(coordinates):  
     x_obstacle, y_obstacle = random.choice(coordinates)
@@ -152,7 +155,9 @@ def obstacle_coord(coordinates):
     z = 0.0
     r = 0.0
     p = 0.0
-    y = 1.671423
+
+    y = 1.671420
+
 
     return x_obstacle, y_obstacle, z, r, p, y
 
@@ -202,7 +207,8 @@ if __name__ == "__main__":
 
     # 경로 설정
     username = os.getlogin()
-    base_path = f"/home/{username}/simulator/src/simulation_pkg/simulation_pkg/lib"
+    base_path = f"/home/{username}/ros2_autonomous_vehicle_simulation/src/simulation_pkg/simulation_pkg/lib"
+
     pyc_folder = os.path.join(base_path, "pyc")
     target_file = "012_deploy_lib.py"
 
