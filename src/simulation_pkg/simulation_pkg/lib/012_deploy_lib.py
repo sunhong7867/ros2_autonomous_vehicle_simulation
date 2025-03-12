@@ -140,9 +140,9 @@ def traffic_light_stand(): # 신호등
     return random_x, random_y, z, r, p, y
 
 # 장애물 회피 차량 + 범위 지정 + 랜덤
-model_types = ["hatchback_blue", "hatchback", "hatchback_red", "hatchback_green", "hatchback_yellow"] 
+model_types = ["prius_hybrid_ob1", "prius_hybrid_ob2", "prius_hybrid_ob3", "hatchback_green", "hatchback_yellow"] 
 
-obstacle_coordinates1 = (12.251981, -15.909271, 0.00, 0.00, 0.00, 0.914252)
+obstacle_coordinates1 = (12.251981, -15.909271, 0.00, 0.00, 0.00, 2.484252)
 obstacle_coordinates_1= (-3.659642, 8.710748, 0.00, 0.00, 0.00, -0.013934)
 obstacle_coordinates_2= (-3.659642, 2.037476, 0.00, 0.00, 0.00, -0.013934)
 
@@ -156,7 +156,7 @@ def obstacle_coord(coordinates):
     r = 0.0
     p = 0.0
 
-    y = 1.671420
+    y = 3.25
 
 
     return x_obstacle, y_obstacle, z, r, p, y
