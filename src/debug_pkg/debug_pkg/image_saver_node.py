@@ -21,7 +21,7 @@ class ImageSaverNode(Node):
     
     def image_callback(self, msg):
         try:
-            cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+            cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='rgb8')
             timestamp = int(time.time() * 1000)  # 밀리초 단위 타임스탬프
             filename = os.path.join(self.save_dir, f'image_{timestamp}.png')
             cv2.imwrite(filename, cv_image)
