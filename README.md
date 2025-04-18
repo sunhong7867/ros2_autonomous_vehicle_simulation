@@ -38,6 +38,9 @@ source install/local_setup.bash
 
 colcon build --symlink-install --packages-select simulation_pkg --allow-overriding simulation_pkg
 source install/local_setup.bash
+
+colcon build --symlink-install --packages-select lidar_perception_pkg --allow-overriding lidar_perception_pkg
+source install/local_setup.bash
 ```
 
 
