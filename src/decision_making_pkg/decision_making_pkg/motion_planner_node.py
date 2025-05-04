@@ -51,8 +51,12 @@ class MotionPlanningNode(Node):
         self.steering_command = 0
         self.left_speed_command = 0
         self.right_speed_command = 0
-        
 
+        # 부드러운 조향용 게인과 필터 계수
+        self.steering_gain    = 0.1     # target_slope → steering 값으로 변환하는 비례 상수
+        self.max_steering     = 7       # 조향의 절대 최대값 (원래 7 유지)
+        self.smoothing_alpha  = 0.6     # 로우패스 필터 계수 (0~1, 1에 가까울수록 관성 커짐)
+        
         # 서브스크라이버 설정
         self.detection_sub = self.create_subscription(DetectionArray, self.sub_detection_topic, self.detection_callback, self.qos_profile)
         self.path_sub = self.create_subscription(PathPlanningResult, self.sub_path_topic, self.path_callback, self.qos_profile)
@@ -100,22 +104,37 @@ class MotionPlanningNode(Node):
                         self.left_speed_command = 0 
                         self.right_speed_command = 0
         else:
+            base_speed = 200
             if self.path_data is None:
-                self.steering_command = 0
+                raw_steer = 0
             else:
-                target_slope = DMFL.calculate_slope_between_points(self.path_data[-10], self.path_data[-1])
-                
-                if target_slope > 0:
-                    self.steering_command =  7 # 예시 조향 값 (7이 최대 조향) 
-                elif target_slope < 0:
-                    self.steering_command =  -7
-                else:
-                    self.steering_command = 0
+                # 1) 경로의 시작과 끝 사이 기울기 계산
+                target_slope = None
+                target_slope = DMFL.calculate_slope_between_points(
+                    self.path_data[-10], self.path_data[-1]
+                )
+                for det in self.detection_data.detections:
+                    if det.class_name == 'crosswalk':
+                        target_slope = DMFL.calculate_slope_between_points(
+                            self.path_data[5], self.path_data[-1]
+                        )
+                        base_speed = 150
+                # 2) 프로포셔널 제어: 기울기에 비례한 조향값
+                raw_steer = int(self.steering_gain * target_slope)
+                # 3) 최대값으로 클램프
+                raw_steer = max(-self.max_steering, min(self.max_steering, raw_steer))
+            
+            # 4) 로우패스 필터로 부드럽게 섞기
+            self.steering_command = int(
+                self.smoothing_alpha * self.steering_command +
+                (1 - self.smoothing_alpha) * raw_steer
+            )
 
-
-            self.left_speed_command = 100  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 100  # 예시 속도 값 (255가 최대 속도)
-
+            # (선택) 커브가 클수록 속도 낮추기
+            speed_adj  = int(abs(self.steering_command) * 13)  # 계수는 튜닝
+            speed_cmd  = max(50, base_speed - speed_adj)      # 최소 속도 50 보장
+            self.left_speed_command  = speed_cmd
+            self.right_speed_command = speed_cmd
 
 
         self.get_logger().info(f"steering: {self.steering_command}, " 
