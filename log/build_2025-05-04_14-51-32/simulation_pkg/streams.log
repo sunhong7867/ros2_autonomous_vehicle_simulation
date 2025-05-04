@@ -1,0 +1,50 @@
+[0.452s] Invoking command in '/home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg': AMENT_PREFIX_PATH=/home/sun/ros2_autonomous_vehicle_simulation/install/decision_making_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/debug_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/camera_perception_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg:/opt/ros/humble CMAKE_PREFIX_PATH=/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg PYTHONPATH=/home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/decision_making_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/decision_making_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/debug_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/debug_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/camera_perception_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/camera_perception_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/build --no-deps symlink_data
+[0.634s] running develop
+[0.750s] running egg_info
+[0.750s] creating simulation_pkg.egg-info
+[0.750s] writing simulation_pkg.egg-info/PKG-INFO
+[0.751s] writing dependency_links to simulation_pkg.egg-info/dependency_links.txt
+[0.751s] writing entry points to simulation_pkg.egg-info/entry_points.txt
+[0.751s] writing requirements to simulation_pkg.egg-info/requires.txt
+[0.751s] writing top-level names to simulation_pkg.egg-info/top_level.txt
+[0.751s] writing manifest file 'simulation_pkg.egg-info/SOURCES.txt'
+[0.752s] reading manifest file 'simulation_pkg.egg-info/SOURCES.txt'
+[0.752s] writing manifest file 'simulation_pkg.egg-info/SOURCES.txt'
+[0.753s] running build_ext
+[0.754s] Creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/python3.10/site-packages/simulation-pkg.egg-link (link to .)
+[0.754s] Installing data_collection_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing draw_trajectory_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing load_ego_car_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing load_obstable_car_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing load_parking_car_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing load_traffic_light_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing sim_debug_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.754s] Installing sim_lane_info_extractor_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_lidar_obstacle_detector_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_lidar_processor_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_motion_planner_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_simulation_sender_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_traffic_light_detector_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sim_yolov8_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing sonar_processor_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing timer_based_obstacle_mover script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] Installing video_recording_node script to /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/simulation_pkg
+[0.755s] 
+[0.755s] Installed /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg
+[0.755s] running symlink_data
+[0.755s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/ament_index
+[0.755s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/ament_index/resource_index
+[0.755s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/ament_index/resource_index/packages
+[0.755s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/resource/simulation_pkg -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/ament_index/resource_index/packages
+[0.755s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/package.xml -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg
+[0.755s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/launch
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/launch/mission_sim.launch.py -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/launch
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/launch/driving_sim.launch.py -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/launch
+[0.756s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/worlds
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/worlds/track.world -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/worlds
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/worlds/lobby_with_tree.world -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/worlds
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/worlds/parking.world -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/worlds
+[0.756s] creating /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/rviz
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/rviz/only_sonar.rviz -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/rviz
+[0.756s] symbolically linking /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/rviz/robot_model.rviz -> /home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/share/simulation_pkg/rviz
+[0.779s] Invoked command in '/home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg' returned '0': AMENT_PREFIX_PATH=/home/sun/ros2_autonomous_vehicle_simulation/install/decision_making_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/debug_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/camera_perception_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg:/opt/ros/humble CMAKE_PREFIX_PATH=/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg PYTHONPATH=/home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sun/ros2_autonomous_vehicle_simulation/install/simulation_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/decision_making_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/decision_making_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/debug_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/debug_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/build/camera_perception_pkg:/home/sun/ros2_autonomous_vehicle_simulation/install/camera_perception_pkg/lib/python3.10/site-packages:/home/sun/ros2_autonomous_vehicle_simulation/install/interfaces_pkg/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sun/ros2_autonomous_vehicle_simulation/build/simulation_pkg/build --no-deps symlink_data
